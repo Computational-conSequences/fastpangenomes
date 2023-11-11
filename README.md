@@ -1,5 +1,5 @@
 # fast pangenomes
-This is a set of programs, scripts, etc, needed to quickly organize prokaryotic genomes into "species"-level groups (pangenomes, or, plainly, to try and accomodate new genomes into the hierarchies existing elsewhere. So, this needs a apipeline, and an explanation of what the pipeline would accomplish.
+This is a set of programs, scripts, etc, needed to quickly organize prokaryotic genomes into "species"-level groups (pangenomes, or, plainly, to try and accomodate new genomes into the hierarchies existing elsewhere. So, this needs a scripted pipeline, and an explanation of what the pipeline would accomplish. We will get there at some point.
 
 ## Scripts/programs
 
