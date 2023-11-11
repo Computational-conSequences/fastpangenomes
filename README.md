@@ -1,6 +1,14 @@
 # fast pangenomes
 This is a set of programs, scripts, etc, needed to quickly organize prokaryotic genomes into "species"-level groups (pangenomes, or, plainly, to try and accomodate new genomes into the hierarchies existing elsewhere. So, this needs a apipeline, and an explanation of what the pipeline would accomplish.
 
+## Scripts/programs
+
+Note: except for obvious shell scripts, like ".zsh" or ".sh" or ".bash", you should make these programs and scripts executables (under any unix, like linux or darwin):
+
+`chmod +x *.pl *.R`
+
+Yes, the ".R" are R scripts, but they run as executables.
+
 ## Needs:
 * mash:
 
@@ -8,7 +16,7 @@ This is a set of programs, scripts, etc, needed to quickly organize prokaryotic 
 
 * R with packages:
   
-  "cluster", "MCMCpack", "ape","reshape2", "fastcluster" for clustering; tidyverse and cutpointr for optimising your cutoffs for species and/or genus level groups. The package fastcluster is only needed if you want to cluster using a method other than diana (we recommend diana)
+  "cluster", "MCMCpack", "ape","reshape2", "fastcluster" for clustering; "tidyverse" and "cutpointr" for optimising your cutoffs for species and/or genus level groups. The package "fastcluster" is only needed if you want to cluster using a method other than diana (we recommend diana)
 
   
 * genomes to cluster:
@@ -24,12 +32,12 @@ This is a set of programs, scripts, etc, needed to quickly organize prokaryotic 
 
 2. The script "masher.zsh" needs you to specify the "last name" of such a directory:
 
-   zsh masher.zsh Klebsiella
+   `zsh masher.zsh Klebsiella`
 
-   The script will run mash to produce the necessary sketches and then the whole all vs all comparison of the genomes in fna-Klebsiella. It will store the results, the all vs all mash distances, at a subdirectory called "Mash". In the Klebsiella case, the file will be called "mash-Klebsiella.tbl.bz2"
+   The script will run mash to produce the necessary sketches and then the whole all _vs_ all comparison of the genomes in fna-Klebsiella. It will store the results, the all _vs_ all mash distances, at a subdirectory called "Mash". In the Klebsiella case, the file will be called "mash-Klebsiella.tbl.bz2"
 
 3. Run clusterGenomes.pl
 
-   The program automatically recognizes the format of the mash file, fixes it to run run properly with R, then calls R to cluster and produce the hierarchy. The hierarchy looks like a phylogenetic tree, and it's the best way to check where your genomes belong in the hierarchy of the organisms you suspected. Two files can be examined here: a ".tree" file that can be read by almost any program for phylogenetics, also readable by soe packages in R, and a ".Rds" which is an R 'object' that retains all the properties of the hierarchy produced by R, and reads very quickly and efficiently into R for further examination, plotting, etc.
+   The program automatically recognizes the format of the mash file, fixes it to run properly with R, then calls R to cluster and produce the hierarchy. The hierarchy looks like a phylogenetic tree, and it's the best way to check where your genomes belong in the hierarchy of the organisms you suspected. After clustering, the program saves several useful files. The main ones you might like to check are: a ".tree" file that can be read by almost any program for phylogenetics/trees, also readable by some packages in R, and a ".Rds" which is an R 'object' that retains all the properties of the hierarchy produced by R, and reads very quickly and efficiently into R for further examination, plotting, etc.
 
 4. We will add, later, the programs we use to decide on cutoffs, and to plot the results.
