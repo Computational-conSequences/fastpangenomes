@@ -1,4 +1,9 @@
 # fast pangenomes
+This repository currently relates to two piblications:
+* Hernandez-Salmeron JE, Irani T, Moreno-Hagelsieb G (2023) Fast genome-based delimitation of Enterobacterales species. PLoS One 18: e0291492. DOI: [10.1371/journal.pone.0291492](https://dx.doi.org/10.1371/journal.pone.0291492)
+* Hernandez-Salmeron JE, Moreno-Hagelsieb G (2022) FastANI, Mash and Dashing equally differentiate between Klebsiella species. PeerJ 10: e13784. DOI: [10.7717/peerj.13784](https://dx.doi.org/10.7717/peerj.13784)
+
+
 This is a set of programs, scripts, etc, needed to quickly organize prokaryotic genomes into "species"-level groups (pangenomes, or, plainly, to try and accomodate new genomes into the hierarchies existing elsewhere. So, this needs a scripted pipeline, and an explanation of what the pipeline would accomplish. We will get there at some point.
 
 ## Scripts/programs
